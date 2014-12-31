@@ -11,7 +11,7 @@ setup(
     description='An imhotep plugin for eslint',
     entry_points={
         'imhotep_linters': [
-            '.js = imhotep-eslint.plugin:Eslint'
+            '.js = imhotep_eslint.plugin:Eslint'
         ],
     },
 )
