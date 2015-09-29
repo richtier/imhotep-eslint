@@ -9,14 +9,13 @@ class Eslint(Tool):
         match = self.regexp.search(line)
         if match is None:
             return None
-        filename = "{0}/{1}".format(dirname, match.group('filename'))
         line = match.group('line')
         message = match.group('message')
-        return filename, line, message
+        return match.group('filename'), line, message
 
     def get_file_extensions(self):
-        return ['.js']
+        return ['.js', 'jsx']
 
     def get_command(self, dirname, linter_configs=set()):
-        return 'eslint --format compact'
+        return 'eslint --format --no-ignore compact'
 
