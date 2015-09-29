@@ -18,5 +18,5 @@ class Eslint(Tool):
         return ['.js']
 
     def get_command(self, dirname, linter_configs=set()):
-        return 'xargs eslint --format compact'
+        return 'eslint --format compact'
 
