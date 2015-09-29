@@ -1,5 +1,7 @@
-from imhotep.tools import Tool
+import os
 import re
+
+from imhotep.tools import Tool
 
 
 class Eslint(Tool):
@@ -11,7 +13,7 @@ class Eslint(Tool):
             return None
         line = match.group('line')
         message = match.group('message')
-        filename = "{0}/{1}".format(dirname, match.group('filename'))
+        filename = os.path.join(dirname, match.group('filename'))
         return filename, line, message
 
     def get_file_extensions(self):
