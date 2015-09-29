@@ -11,7 +11,8 @@ class Eslint(Tool):
             return None
         line = match.group('line')
         message = match.group('message')
-        return match.group('filename'), line, message
+        filename = "{0}/{1}".format(dirname, match.group('filename'))
+        return filename, line, message
 
     def get_file_extensions(self):
         return ['.js', 'jsx']
