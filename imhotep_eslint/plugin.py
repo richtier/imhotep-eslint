@@ -7,7 +7,7 @@ class Eslint(Tool):
 
     def process_line(self, dirname, line):
         match = self.regexp.search(line)
-        if match is None
+        if match is None:
             return None
         filename = "{0}/{1}".format(dirname, match.group('filename'))
         line = match.group('line')
